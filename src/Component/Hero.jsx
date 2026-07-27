@@ -2,10 +2,16 @@ import React from 'react'
 import { assets } from '../assets/assets'
 import Navbar from './Navbar'
 import { cities } from '../assets/assets'
+import { useLocation } from 'react-router-dom'
 
 const Hero = () => {
+
+    const location = useLocation().pathname
+
+
     return (
-        <div style={{ backgroundImage: `url(${assets.heroImage})` }} className=' px-4 sm:px-10 lg:px-15 pt-2 bg-cover bg-no-repeat h-screen '>
+        <div
+            style={{ backgroundImage: `url(${assets.heroImage})` }} className=' px-4 sm:px-10 lg:px-15 pt-2 bg-cover bg-no-repeat h-screen '>
             <div className='mt-50 space-y-2'>
                 <p className='text-white bg-blue-400 w-fit opacity-75 rounded-xl text-[10px] px-3 h-fit md:text-[13px]'>The Ultimate Hotel Experience</p>
                 <p className='text-xl max-w-[280px] text-white font-bold md:text-5xl md:max-w-lg'>Discover Your Perfect Gateway Destination</p>
