@@ -28,14 +28,22 @@ const Navbar = () => {
 
     React.useEffect(() => {
         if (location.pathname !== "/") {
-            return 0
+            setIsScrolled(true)
         }
+        else {
+            setIsScrolled(false)
+        }
+
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 10);
+            if (location.pathname !== "/") {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(window.scrollY > 10);
+            }
         };
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    }, [location.pathname]);
 
     return (
         <nav className={`fixed top-0 left-0 w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 transition-all duration-500 z-50 ${isScrolled ? "bg-white/80 shadow-md text-gray-700 backdrop-blur-lg py-3 md:py-4" : "py-4 md:py-6"}`}>
@@ -85,6 +93,21 @@ const Navbar = () => {
                     <line x1="4" y1="12" x2="20" y2="12" />
                     <line x1="4" y1="18" x2="20" y2="18" />
                 </svg> */}
+                {
+                    user ? <div className="md:hidden">
+                        <UserButton >
+                            <UserButton.MenuItems>
+                                <UserButton.Action label="My Bookings " labelIcon={<img src={assets.calenderIcon} />} onClick={() => navigate('/my-bookings')} />
+                            </UserButton.MenuItems>
+                        </UserButton>
+                    </div>
+                        : <div className="hidden md:flex items-center gap-4" onClick={() => openSignIn()}>
+                            <img src={assets.searchIcon} className={`${isScrolled && "invert"} h-7 trnasition-all duration-500`} alt="" />
+                            <button className={`px-8 py-2.5 rounded-full ml-4 transition-all duration-500 ${isScrolled ? "text-white bg-black" : "bg-white text-black"}`} >
+                                Login
+                            </button>
+                        </div>
+                }
                 <img src={assets.menuIcon} alt="" onClick={() => setIsMenuOpen(!isMenuOpen)} className={`h-6 w-6 cursor-pointer ${isScrolled ? "invert" : ""}`} />
             </div>
 
@@ -107,21 +130,7 @@ const Navbar = () => {
                 <button className="border px-4 py-1 text-sm font-light rounded-full cursor-pointer transition-all">
                     Dashboard
                 </button>
-                {
-                    user ? <div className="md:hidden">
-                        <UserButton >
-                            <UserButton.MenuItems>
-                                <UserButton.Action label="My Bookings " labelIcon={<img src={assets.calenderIcon} />} onClick={() => navigate('/my-bookings')} />
-                            </UserButton.MenuItems>
-                        </UserButton>
-                    </div>
-                        : <div className="hidden md:flex items-center gap-4" onClick={() => openSignIn()}>
-                            <img src={assets.searchIcon} className={`${isScrolled && "invert"} h-7 trnasition-all duration-500`} alt="" />
-                            <button className={`px-8 py-2.5 rounded-full ml-4 transition-all duration-500 ${isScrolled ? "text-white bg-black" : "bg-white text-black"}`} >
-                                Login
-                            </button>
-                        </div>
-                }
+
 
             </div>
         </nav>
