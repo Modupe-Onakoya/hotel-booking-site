@@ -4,6 +4,7 @@ import Home from "./Page/Home"
 import Navbar from "./Component/Navbar"
 import AllRooms from "./Page/AllRooms"
 import RoomDetails from "./Page/RoomDetails"
+import MyBooking from "./Component/MyBooking"
 
 
 function App() {
@@ -17,6 +18,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/rooms" element={<AllRooms />} />
           <Route path="/room-details/:id" element={<RoomDetails />} />
+          <Route path="/my-bookings" element={<MyBooking />} />
+
 
         </Routes>
       </div>
