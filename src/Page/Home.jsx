@@ -2,6 +2,7 @@ import React from 'react'
 import Hero from '../Component/Hero'
 import { FeaturedHotels } from '../Component/FeaturedHotels'
 import ExclusiveOffers from '../assets/ExclusiveOffers'
+import Testimonial from '../Component/Testimonial'
 
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
             <Hero />
             <FeaturedHotels />
             <ExclusiveOffers />
+            <Testimonial />
         </div>
     )
 }

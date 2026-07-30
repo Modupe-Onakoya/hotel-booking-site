@@ -4,7 +4,7 @@ import { assets } from '../assets/assets'
 
 const FeaturedHotelCard = ({ room, index }) => {
     return (
-        <Link to={"/rooms/" + room._id} className='rounded-sm border-gray-300 border relative' >
+        <Link to={"/room-details/" + room._id} className='rounded-sm border-gray-300 border relative' >
 
             {index % 2 === 0 && <p className='absolute top-2 left-2 px-3 py-1 rounded-lg bg-white'>Best Seller</p>}
             <img className="w-50 h-30 rounded-sm" src={room.images[0]} alt="" />
