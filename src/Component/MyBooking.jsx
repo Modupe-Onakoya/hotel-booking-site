@@ -1,58 +1,69 @@
-import React, { useState } from 'react'
-import { assets, roomsDummyData } from '../assets/assets'
+import React from "react";
+import { roomsDummyData, hotelDummyData } from "../assets/assets";
 
 const MyBooking = () => {
-
-
-    const [booking, setBooking] = useState(roomsDummyData)
-
     return (
-        <div className='pt-30 px-4 lg:px-24'>
-            <h1 className='text-xl font-bold'>My Bookings</h1>
-            <p className='max-w-lg'>Easily manage past current and upcoming hotel reservations in one place. Plan your trips seamlessly with just few click</p>
+        <div className="grid grid-cols-3 gap-6 px-4 sm:px-6 md:px-8 lg:px-24 xl:px-32 pt-30">
 
-            <div className='grid grid-cols-[3fr_2fr_1fr]'>
-                <div>
-                    Hotel
-                </div>
-                <div>
-                    Timing
-                </div>
-                <div>
-                    Payment
-                </div>
-                {
-                    booking.slice(0, 2).map((book, index) => (
-                        <div className='grid grid-span-3'>
-                            {/* hotel */}
+            {/* HEADERS */}
+            <p className="font-medium text-gray-500">Hotel</p>
+            <p className="font-medium text-gray-500">Timing</p>
+            <p className="font-medium text-gray-500">Payment</p>
 
-                            <div>
-                                <img src={book.images[0]} alt="" className='w-60 h-40' />
+            {/* DIVIDER */}
+            <div className="col-span-3 border-t border-gray-200" />
 
-                                <p>{book.hotel.name}</p>
-                                <div>
-                                    <img src={assets.locationIcon} alt="" />
-                                    <p>{book.hotel.address}</p>
-                                    <p>Guest 2</p>
-                                    <div>
-                                        <span>Total</span>
-                                        <span>{book.pricePerNight}</span>
-                                    </div>
-                                </div>
+            {/* ROWS */}
+            {roomsDummyData.map((room) => (
+                <>
+                    {/* HOTEL — col 1 */}
+                    <div key={room._id} className="flex gap-3 items-start">
+                        <img
+                            src={room.images[0]}
+                            alt={room.hotel.name}
+                            className="w-20 h-20 object-cover rounded-md"
+                        />
+                        <div className="flex flex-col gap-1">
+                            <p className="font-medium">{room.hotel.name}</p>
+                            <p className="text-sm text-gray-500">{room.hotel.address}</p>
+                            <p className="text-sm text-gray-500">{room.hotel.city}</p>
+                            <div className="flex items-center gap-1 text-sm text-gray-500">
+                                {/* guest icon */}
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.121 17.804A9 9 0 1118.88 6.196M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span>2 Guests</span>
                             </div>
-                            <div>
-                                checek ik
-                            </div>
-                            <div>
-                                paid
-                            </div>
+                            <p className="text-sm font-medium">${room.pricePerNight} / night</p>
                         </div>
+                    </div>
 
-                    ))
-                }
-            </div>
+                    {/* TIMING — col 2 */}
+                    <div className="flex gap-8">
+                        <div className="flex flex-col gap-1">
+                            <p className="text-sm text-gray-500">Check In</p>
+                            <p className="font-medium">12 Aug 2026</p>
+                        </div>
+                        <div className="flex flex-col gap-1">
+                            <p className="text-sm text-gray-500">Check Out</p>
+                            <p className="font-medium">15 Aug 2026</p>
+                        </div>
+                    </div>
+
+                    {/* PAYMENT — col 3 */}
+                    <div className="flex items-start">
+                        <span className="px-3 py-1 rounded-full text-sm bg-green-100 text-green-700">
+                            Paid
+                        </span>
+                    </div>
+
+                    {/* row divider */}
+                    <div className="col-span-3 border-t border-gray-100" />
+                </>
+            ))}
+
         </div>
-    )
-}
+    );
+};
 
-export default MyBooking
+export default MyBooking;

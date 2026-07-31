@@ -3,6 +3,8 @@ import Hero from '../Component/Hero'
 import { FeaturedHotels } from '../Component/FeaturedHotels'
 import ExclusiveOffers from '../assets/ExclusiveOffers'
 import Testimonial from '../Component/Testimonial'
+import Footer from '../Component/Footer'
+import Star from '../Component/Star'
 
 
 const Home = () => {
@@ -11,6 +13,8 @@ const Home = () => {
             <Hero />
             <FeaturedHotels />
             <ExclusiveOffers />
+            <Testimonial />
+            <Footer />
         </div>
     )
 }
