@@ -25,7 +25,7 @@ const FeaturedHotelCard = ({ room, index }) => {
                 </div>
                 <div className='flex justify-between'>
                     <div>
-                        <span className='font-bold text-[15px]'>$450</span>
+                        <span className='font-medium text-[13px]'>$450</span>
                         <span className='text-sm'>/night</span>
                     </div>
                     <button className=' cursor-pointer border py-1 text-xs border-gray-300 rounded-md px-1'>View Details</button>

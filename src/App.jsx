@@ -5,6 +5,7 @@ import Navbar from "./Component/Navbar"
 import AllRooms from "./Page/AllRooms"
 import RoomDetails from "./Page/RoomDetails"
 import MyBooking from "./Component/MyBooking"
+import Footer from "./Component/Footer"
 
 
 function App() {
@@ -22,8 +23,9 @@ function App() {
 
 
         </Routes>
-      </div>
 
+      </div>
+      {!isOwner && <Footer />}
     </>
   )
 }

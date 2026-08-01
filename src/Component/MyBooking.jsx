@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { roomsDummyData, hotelDummyData } from "../assets/assets";
 
 const MyBooking = () => {
+    const [booking, setBooking] = useState("")
+
     return (
-        <div className="grid grid-cols-3 gap-6 px-4 sm:px-6 md:px-8 lg:px-24 xl:px-32 pt-30">
+        <div className="grid grid-cols-3 gap-6 px-4 sm:px-6 md:px-8 lg:px-24 xl:px-32 pt-30 text-[13px]">
 
             {/* HEADERS */}
             <p className="font-medium text-gray-500">Hotel</p>
@@ -42,11 +44,11 @@ const MyBooking = () => {
                     <div className="flex gap-8">
                         <div className="flex flex-col gap-1">
                             <p className="text-sm text-gray-500">Check In</p>
-                            <p className="font-medium">12 Aug 2026</p>
+                            <p className="text-[12px]">12 Aug 2026</p>
                         </div>
                         <div className="flex flex-col gap-1">
                             <p className="text-sm text-gray-500">Check Out</p>
-                            <p className="font-medium">15 Aug 2026</p>
+                            <p className="text-[12px]">15 Aug 2026</p>
                         </div>
                     </div>
 

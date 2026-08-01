@@ -17,16 +17,16 @@ const prices = [
 ];
 
 const sort = [
-    "5 Stars",
-    "4 Stars & Up",
-    "3 Stars & Up",
+    "Price Low to High",
+    "Price High to Low",
+    "Newest Price",
 ];
 
 const AllRooms = () => {
 
     const [showFilterBar, setShowFilterBar] = useState(false)
     return (
-        <div className='px-4 pt-30 md:px-24 flex gap-30 flex-col-reverse md:flex-row '>
+        <div className='px-4 pt-30 md:px-24 flex gap-10 lg:gap-30 flex-col-reverse md:flex-row '>
             <div>
 
                 <h1 className='font-bold text-xl '>
@@ -76,49 +76,60 @@ const AllRooms = () => {
 
             {/* Filter */}
 
-            <div className='border h-fit p-3'>
-                <div className='flex justify-between'> <p>Filter</p>
-                    <p className='md:block hidden' >Clear</p>
+            <div className=' h-fit w-full max-w-[250px] '>
+                <div className='flex justify-between border border-gray-300 w-full p-3 ' >
+                    <p>Filter</p>
+                    <p className='md:block hidden cursor-pointer' >Clear</p>
 
                     {
-                        showFilterBar ? <p className='md:hidden' onClick={() => setShowFilterBar(!showFilterBar)}>Close</p> : <p className='md:hidden' onClick={() => setShowFilterBar(!showFilterBar)}>open</p>
+                        showFilterBar ? <p className='md:hidden cursor-pointer' onClick={() => setShowFilterBar(!showFilterBar)}>Close</p> : <p className='cursor-pointer md:hidden' onClick={() => setShowFilterBar(!showFilterBar)}>open</p>
                     }
                 </div>
-                <div className={`${showFilterBar ? "block" : "hidden"} md:block`}>
-                    <div className='space-y-2'>
-                        {roomTypes.map((items) => (
-                            <div>
-                                <input type="checkbox" id={items} />
-                                <label htmlFor={items}>{items}</label>
-                            </div>
-                        ))}
+                <div className={`${showFilterBar ? "block" : "hidden"} md:block border border-t-0 p-3 space-y-2 border-gray-300`}>
+                    <div className='space-y-1'>
+                        <h2 className=''>
+                            Popular filters
+                        </h2>
+                        <div className='space-y-2'>
+                            {roomTypes.map((items) => (
+                                <div className='space-x-1 text-[12px] flex items-center'>
+                                    <input type="checkbox" id={items} className='' />
+                                    <label htmlFor={items}>{items}</label>
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                    <div className='space-y-2'>
-                        <h2 className='font-bold'>
+                    <div className='space-y-1'>
+                        <h2 className=''>
                             Price
                         </h2>
-                        {prices.map((items) => (
-                            <div>
-                                <input type="checkbox" id={items} />
-                                <label htmlFor={items}>{items}</label>
-                            </div>
-                        ))}
+                        <div className='space-y-2 '>
+                            {prices.map((items) => (
+                                <div className='space-x-1 text-[12px] flex items-center'>
+                                    <input type="checkbox" id={items} />
+                                    <label htmlFor={items}>{items}</label>
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                    <div className='space-y-2'>
-                        <h2 className='font-bold'>
+                    <div className='space-y-1'>
+                        <h2 className=''>
                             Sort By
                         </h2>
-                        {sort.map((items) => (
-                            <div>
-                                <input type="checkbox" id={items} />
-                                <label htmlFor={items}>{items}</label>
-                            </div>
-                        ))}
+                        <div className='space-y-2'>
+                            {sort.map((items) => (
+                                <div className='space-x-1 text-[12px] flex items-center'>
+                                    <input type="checkbox" id={items} />
+                                    <label htmlFor={items}>{items}</label>
+                                </div>
+                            ))}
+                        </div>
+
                     </div>
                 </div>
-            </div>
+            </div >
 
-        </div>
+        </div >
     )
 }
 
