@@ -4,13 +4,14 @@ import './index.css'
 import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import { ClerkProvider } from '@clerk/react'
+import AppContext from './Component/AppContext.jsx'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <ClerkProvider>
-      <StrictMode>
+      <AppContext>
         <App />
-      </StrictMode>
+      </AppContext>
     </ClerkProvider>
   </BrowserRouter>
 )
