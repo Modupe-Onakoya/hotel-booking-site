@@ -75,7 +75,6 @@ const Navbar = () => {
                     </UserButton.MenuItems>
                 </UserButton>
                 </div> : <div className="hidden md:flex items-center gap-4" onClick={() => openSignIn()}>
-                    <img src={assets.searchIcon} className={`${isScrolled && "invert"} h-7 trnasition-all duration-500`} alt="" />
                     <button className={`px-8 py-2.5 rounded-full ml-4 transition-all duration-500 ${isScrolled ? "text-white bg-black" : "bg-white text-black"}`} >
                         Login
                     </button>
@@ -91,21 +90,21 @@ const Navbar = () => {
                     <line x1="4" y1="18" x2="20" y2="18" />
                 </svg> */}
                 {
-                    user ? <div className="md:hidden">
+                    user ? <div className="md:hidden max-w-sm">
                         <UserButton >
                             <UserButton.MenuItems>
                                 <UserButton.Action label="My Bookings " labelIcon={<img src={assets.calenderIcon} />} onClick={() => navigate('/my-bookings')} />
                             </UserButton.MenuItems>
                         </UserButton>
+                        <img src={assets.menuIcon} alt="" onClick={() => setIsMenuOpen(!isMenuOpen)} className={`h-6 w-6 cursor-pointer ${isScrolled ? "invert" : ""}`} />
+
                     </div>
-                        : <div className="hidden md:flex items-center gap-4" onClick={() => openSignIn()}>
-                            <img src={assets.searchIcon} className={`${isScrolled && "invert"} h-7 trnasition-all duration-500`} alt="" />
-                            <button className={`px-8 py-2.5 rounded-full ml-4 transition-all duration-500 ${isScrolled ? "text-white bg-black" : "bg-white text-black"}`} >
+                        : <div className=" md:hidden items-center gap-4" onClick={() => openSignIn()}>
+                            <button className={`px-4 py-2 rounded-full ml-4 text-[12px]  transition-all duration-500 ${isScrolled ? "text-white bg-black" : "bg-white text-black"}`} >
                                 Login
                             </button>
                         </div>
                 }
-                <img src={assets.menuIcon} alt="" onClick={() => setIsMenuOpen(!isMenuOpen)} className={`h-6 w-6 cursor-pointer ${isScrolled ? "invert" : ""}`} />
             </div>
 
             {/* Mobile Menu */}
