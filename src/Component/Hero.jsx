@@ -24,13 +24,13 @@ const Hero = () => {
 
     return (
         <div
-            style={{ backgroundImage: `url(${assets.heroImage})` }} className=' px-4 sm:px-10 lg:px-24  pt-2 bg-cover bg-no-repeat h-screen '>
+            style={{ backgroundImage: `url(${assets.heroImage})` }} className=' px-4 sm:px-10 lg:px-24  pt-2 bg-cover bg-no-repeat pb-5   '>
             <div className='mt-50 space-y-2'>
                 <p className='text-white bg-blue-400 w-fit opacity-75 rounded-xl text-[10px] px-3 h-fit md:text-[13px]'>The Ultimate Hotel Experience</p>
                 <p className='text-xl max-w-[280px] text-white font-bold md:text-5xl md:max-w-lg'>Discover Your Perfect Gateway Destination</p>
-                <p className='text-[10px] max-w-[250px] text-white md:text-[14px] md:max-w-lg'>Unparallel luxry and comfort await at the world most exclusive hotel and resort. Start your journey today. </p>
+                <p className='text-[10px] max-w-[250px] text-white md:text-[14px] md:max-w-lg pb-3'>Unparallel luxry and comfort await at the world most exclusive hotel and resort. Start your journey today. </p>
             </div>
-            <form onSubmit={user ? submit : () => alert("Kinldy login to acess hotels")} className='bg-white text-gray-500 rounded-lg px-6 py-4  flex flex-col md:flex-row w-fit max-md:items-start gap-4 max-md:mx-auto'>
+            <form onSubmit={user ? submit : () => alert("Login to access hotels")} className='bg-white text-gray-500 rounded-lg px-6 py-4  flex flex-col md:flex-row  w-fit max-md:items-start gap-4 max-md:mx-auto'>
 
                 <div>
                     <div className='flex items-center gap-2'>

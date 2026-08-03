@@ -15,7 +15,15 @@ const AppContext = ({ children }) => {
 
     const [hotel, setHotel] = useState([])
     const [rooms, setRooms] = useState([])
+    const [bookings, setBookings] = useState([])
 
+    const addBooking = (booking) => {
+        setBookings((prev) => [...prev, { ...booking, id: Date.now(), isPaid: false }])
+    }
+
+    const cancelBooking = (id) => {
+        setBookings((prev) => prev.filter((b) => b.id !== id))
+    }
     const roomsWithImages = hotelData.rooms.map((room) => ({
         ...room,
         images: [roomImg1, roomImg2, roomImg3, roomImg4]
@@ -33,7 +41,7 @@ const AppContext = ({ children }) => {
     }, [])
 
     return (
-        <context.Provider value={{ hotel, rooms }}>
+        <context.Provider value={{ hotel, rooms, bookings, addBooking, cancelBooking }}>
             {children}
         </context.Provider>
     )

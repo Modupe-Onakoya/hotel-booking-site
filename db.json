@@ -378,6 +378,34 @@
       "isPaid": false,
       "userId": "user1",
       "id": "Bs1OuIHMkr4"
+    },
+    {
+      "roomId": "3",
+      "hotelName": "Urbanza Suites",
+      "roomType": "Suite",
+      "image": "/src/assets/roomImg1.png",
+      "city": "New York",
+      "pricePerNight": 499,
+      "checkIn": "0003-03-03",
+      "checkOut": "0003-03-03",
+      "guests": 1,
+      "isPaid": false,
+      "userId": "user1",
+      "id": "S3VrtuSzqwM"
+    },
+    {
+      "roomId": "3",
+      "hotelName": "Urbanza Suites",
+      "roomType": "Suite",
+      "image": "/src/assets/roomImg1.png",
+      "city": "New York",
+      "pricePerNight": 499,
+      "checkIn": "0003-03-23",
+      "checkOut": "0002-12-31",
+      "guests": 1,
+      "isPaid": false,
+      "userId": "user1",
+      "id": "m-_oEgFMwVM"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { assets, facilityIcons, roomCommonData } from '../assets/assets'
 import Star from '../Component/Star'
-import { useUser } from '@clerk/react'
 import { context } from '../Component/AppContext'
 
 const RoomDetails = () => {
@@ -14,9 +13,8 @@ const RoomDetails = () => {
     const [bookingSuccess, setBookingSuccess] = useState(false)
 
     const { id } = useParams()
-    const { rooms } = useContext(context)
+    const { rooms, addBooking } = useContext(context)
 
-    const { user } = useUser()
     useEffect(() => {
         const found = rooms.find((room) => String(room.id) === String(id))
         if (found) {
@@ -25,10 +23,10 @@ const RoomDetails = () => {
         }
     }, [id, rooms])
 
-    const handleBooking = async (e) => {
+    const handleBooking = (e) => {
         e.preventDefault()
 
-        const booking = {
+        addBooking({
             roomId: room.id,
             hotelName: room.hotelName,
             roomType: room.roomType,
@@ -38,32 +36,17 @@ const RoomDetails = () => {
             checkIn,
             checkOut,
             guests: Number(guests),
-            isPaid: false,
-            userId: "user1",
-        }
+        })
 
-        try {
-            const res = await fetch("http://localhost:5000/bookings", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(booking)
-            })
-
-            if (res.ok) {
-                setBookingSuccess(true)
-                setCheckIn("")
-                setCheckOut("")
-                setGuests(1)
-            }
-        } catch (err) {
-            console.error("Booking failed:", err)
-        }
+        setBookingSuccess(true)
+        setCheckIn("")
+        setCheckOut("")
+        setGuests(1)
     }
 
     return room && (
         <div className='pt-30 px-4 lg:px-24 text-[13px] space-y-1'>
 
-            {/* header */}
             <div className='space-x-2 flex'>
                 <div>
                     <span className='text-xl'>{room.hotelName}</span>
@@ -72,19 +55,16 @@ const RoomDetails = () => {
                 <span className='bg-orange-600 px-1 py-1 text-white rounded-2xl text-[13px]'>20% off</span>
             </div>
 
-            {/* rating */}
             <div className='flex items-center space-x-1'>
                 <Star />
                 <span>200+ reviews</span>
             </div>
 
-            {/* location */}
             <div className='flex gap-1'>
                 <img src={assets.locationIcon} alt="" />
                 <span>{room.city}</span>
             </div>
 
-            {/* images */}
             <div className='flex flex-col md:flex-row gap-2 py-2'>
                 <div className='md:w-1/2'>
                     <img src={image} alt="selected" className='w-full h-full object-cover rounded-lg' />
@@ -102,15 +82,14 @@ const RoomDetails = () => {
                 </div>
             </div>
 
-            {/* details + price */}
             <div className='flex justify-between py-2'>
                 <div className='space-y-2'>
                     <p className='text-lg md:text-xl font-bold max-sm:max-w-[250px]'>
                         Experience Luxury Like Never Before
                     </p>
-                    <div className='flex gap-2 border-b border-gray-300 pb-4'>
+                    <div className='flex gap-2 flex-col md:flex-row border-b border-gray-300 pb-4'>
                         {room.amenities.map((item) => (
-                            <div key={item} className='flex items-center bg-gray-300 py-1 px-2 rounded-lg gap-1'>
+                            <div key={item} className=' w-fit flex items-center bg-gray-300 py-1 px-2 rounded-lg gap-1'>
                                 <img src={facilityIcons[item]} alt="" className='w-3' />
                                 <p className='text-[12px]'>{item}</p>
                             </div>
@@ -122,15 +101,13 @@ const RoomDetails = () => {
                 </div>
             </div>
 
-            {/* success message */}
             {bookingSuccess && (
                 <div className='bg-green-100 text-green-700 px-4 py-3 rounded-lg text-sm'>
                     Booking successful! Go to <a href="/my-bookings" className='underline font-medium'>My Bookings</a> to view it.
                 </div>
             )}
 
-            {/* booking form */}
-            <form onSubmit={user ? handleBooking : () => { alert("Kindly Login") }} className='flex border border-gray-200 rounded-lg mb-10 p-4 justify-between mt-4 shadow-lg flex-col space-y-5 md:flex-row'>
+            <form onSubmit={handleBooking} className='flex border border-gray-200 rounded-lg mb-10 p-4 justify-between mt-4 shadow-lg flex-col space-y-5 md:flex-row'>
                 <div className='flex gap-5 flex-col md:flex-row'>
                     <div className='flex flex-col border-r px-2 border-gray-300'>
                         <label htmlFor="checkin" className='text-sm'>Check In</label>
@@ -174,7 +151,6 @@ const RoomDetails = () => {
                 </button>
             </form>
 
-            {/* room common data */}
             <div className='space-y-3'>
                 {roomCommonData.map((item) => (
                     <div key={item.title} className='flex gap-2'>

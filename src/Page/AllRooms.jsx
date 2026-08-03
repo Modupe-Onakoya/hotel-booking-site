@@ -5,7 +5,7 @@ import Star from '../Component/Star'
 import { context } from '../Component/AppContext';
 
 const roomTypes = ["Single Bed", "Double Bed", "Family Bed", "Luxury Suite"];
-const prices = ["₦2,500 - ₦5,000", "₦5,000 - ₦10,000", "₦10,000 - ₦20,000"];
+const prices = ["$100 - $200", "$200 - $300", "$300 - $400"];
 const sort = ["Price Low to High", "Price High to Low", "Newest Price"];
 
 const AllRooms = () => {
@@ -49,9 +49,9 @@ const AllRooms = () => {
         .filter((room) => selectedRoomTypes.length > 0 ? selectedRoomTypes.includes(room.roomType) : true)
         .filter((room) => {
             if (!selectedPrice) return true
-            if (selectedPrice === "₦2,500 - ₦5,000") return room.pricePerNight <= 150
-            if (selectedPrice === "₦5,000 - ₦10,000") return room.pricePerNight > 150 && room.pricePerNight <= 300
-            if (selectedPrice === "₦10,000 - ₦20,000") return room.pricePerNight > 300
+            if (selectedPrice === "$100 - $200") return room.pricePerNight <= 150
+            if (selectedPrice === "$200 - $300") return room.pricePerNight > 150 && room.pricePerNight <= 300
+            if (selectedPrice === "$300 - $400") return room.pricePerNight > 300
             return true
         })
         .sort((a, b) => {
@@ -106,7 +106,7 @@ const AllRooms = () => {
             </div>
 
             {/* Filter */}
-            <div className='h-fit w-full max-w-[250px]'>
+            <div className='h-fit w-full max-w-[250px] md:fixed md:right-30'>
                 <div className='flex justify-between border border-gray-300 w-full p-3'>
                     <p>Filter</p>
                     <p className='md:block hidden cursor-pointer' onClick={handleClear}>Clear</p>

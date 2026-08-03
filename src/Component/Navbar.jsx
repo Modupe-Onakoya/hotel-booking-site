@@ -24,8 +24,10 @@ const Navbar = () => {
     const { openSignIn } = useClerk()
     const { user } = useUser()
     const navigate = useNavigate()
+
     const location = useLocation()
 
+    const loca = location.pathname
     React.useEffect(() => {
         if (location.pathname !== "/") {
             setIsScrolled(true)
@@ -90,12 +92,13 @@ const Navbar = () => {
                     <line x1="4" y1="18" x2="20" y2="18" />
                 </svg> */}
                 {
-                    user ? <div className="md:hidden max-w-sm">
+                    user ? <div className="md:hidden max-w-sm flex items-center gap-3">
                         <UserButton >
                             <UserButton.MenuItems>
                                 <UserButton.Action label="My Bookings " labelIcon={<img src={assets.calenderIcon} />} onClick={() => navigate('/my-bookings')} />
                             </UserButton.MenuItems>
                         </UserButton>
+
                         <img src={assets.menuIcon} alt="" onClick={() => setIsMenuOpen(!isMenuOpen)} className={`h-6 w-6 cursor-pointer ${isScrolled ? "invert" : ""}`} />
 
                     </div>
