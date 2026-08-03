@@ -14,9 +14,8 @@ const Navbar = () => {
 
     const navLinks = [
         { name: 'Home', path: '/' },
-        { name: 'Hotels', path: '/' },
-        { name: 'Experience', path: '/' },
-        { name: 'About', path: '/' },
+        { name: 'Hotels', path: '#hotels' },
+        { name: 'Testimonial', path: '#testimonial' },
     ];
 
     const [isScrolled, setIsScrolled] = React.useState(false);
@@ -62,9 +61,6 @@ const Navbar = () => {
                         <div className={`${isScrolled ? "bg-gray-700" : "bg-white"} h-0.5 w-0 group-hover:w-full transition-all duration-300`} />
                     </a>
                 ))}
-                {user && <button className={`border px-4 py-1 text-sm font-light rounded-full cursor-pointer ${isScrolled ? 'text-black' : 'text-white'} transition-all`}>
-                    Dashboard
-                </button>}
 
             </div>
 
@@ -127,9 +123,6 @@ const Navbar = () => {
                     </a>
                 ))}
 
-                <button className="border px-4 py-1 text-sm font-light rounded-full cursor-pointer transition-all">
-                    Dashboard
-                </button>
 
 
             </div>

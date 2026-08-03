@@ -1,7 +1,7 @@
 {
     "hotels": [
         {
-            "id": 1,
+            "id": "1",
             "name": "Urbanza Suites",
             "address": "123 Main Road, 23 Colony",
             "city": "New York",
@@ -12,7 +12,7 @@
             "description": "A luxury urban retreat in the heart of New York, offering world-class amenities and stunning city views."
         },
         {
-            "id": 2,
+            "id": "2",
             "name": "Azure Beach Resort",
             "address": "45 Ocean Drive, Victoria Island",
             "city": "Lagos",
@@ -23,7 +23,7 @@
             "description": "A stunning beachfront resort with breathtaking ocean views and premium hospitality."
         },
         {
-            "id": 3,
+            "id": "3",
             "name": "The Grand Palace",
             "address": "78 Kings Avenue, Central District",
             "city": "London",
@@ -36,7 +36,7 @@
     ],
     "rooms": [
         {
-            "id": 1,
+            "id": "1",
             "hotelId": 1,
             "hotelName": "Urbanza Suites",
             "city": "New York",
@@ -58,7 +58,7 @@
             "description": "A cozy single room with modern furnishings and city views."
         },
         {
-            "id": 2,
+            "id": "2",
             "hotelId": 1,
             "hotelName": "Urbanza Suites",
             "city": "New York",
@@ -81,7 +81,7 @@
             "description": "Spacious double room perfect for couples with premium city views."
         },
         {
-            "id": 3,
+            "id": "3",
             "hotelId": 1,
             "hotelName": "Urbanza Suites",
             "city": "New York",
@@ -105,7 +105,7 @@
             "description": "Luxurious suite with panoramic city views and a private lounge area."
         },
         {
-            "id": 4,
+            "id": "4",
             "hotelId": 1,
             "hotelName": "Urbanza Suites",
             "city": "New York",
@@ -127,7 +127,7 @@
             "description": "Premium double room with mountain views and exclusive pool access."
         },
         {
-            "id": 5,
+            "id": "5",
             "hotelId": 2,
             "hotelName": "Azure Beach Resort",
             "city": "Lagos",
@@ -149,7 +149,7 @@
             "description": "Comfortable single room steps away from the beach."
         },
         {
-            "id": 6,
+            "id": "6",
             "hotelId": 2,
             "hotelName": "Azure Beach Resort",
             "city": "Lagos",
@@ -171,7 +171,7 @@
             "description": "Beachfront double room with stunning ocean views."
         },
         {
-            "id": 7,
+            "id": "7",
             "hotelId": 2,
             "hotelName": "Azure Beach Resort",
             "city": "Lagos",
@@ -194,7 +194,7 @@
             "description": "Luxury beach suite with private terrace and ocean panorama."
         },
         {
-            "id": 8,
+            "id": "8",
             "hotelId": 2,
             "hotelName": "Azure Beach Resort",
             "city": "Lagos",
@@ -215,7 +215,7 @@
             "description": "Cozy single room with garden views and complimentary WiFi."
         },
         {
-            "id": 9,
+            "id": "9",
             "hotelId": 3,
             "hotelName": "The Grand Palace",
             "city": "London",
@@ -237,7 +237,7 @@
             "description": "Elegant single room with classic London architecture and modern comforts."
         },
         {
-            "id": 10,
+            "id": "10",
             "hotelId": 3,
             "hotelName": "The Grand Palace",
             "city": "London",
@@ -260,7 +260,7 @@
             "description": "Grand double room with park views and premium furnishings."
         },
         {
-            "id": 11,
+            "id": "11",
             "hotelId": 3,
             "hotelName": "The Grand Palace",
             "city": "London",
@@ -280,11 +280,11 @@
                 "/roomImg2.jpg"
             ],
             "isAvailable": true,
-            "rating": 5.0,
+            "rating": 5,
             "description": "The pinnacle of luxury — a full suite with butler service and panoramic London views."
         },
         {
-            "id": 12,
+            "id": "12",
             "hotelId": 3,
             "hotelName": "The Grand Palace",
             "city": "London",
@@ -308,33 +308,49 @@
     ],
     "testimonials": [
         {
-            "id": 1,
+            "id": "1",
             "name": "Sarah Johnson",
             "title": "Business Traveler",
             "rating": 5,
             "comment": "Absolutely stunning experience. The rooms were immaculate and the staff went above and beyond."
         },
         {
-            "id": 2,
+            "id": "2",
             "name": "James Carter",
             "title": "Honeymoon Guest",
             "rating": 4,
             "comment": "Perfect location and beautiful interiors. We had an amazing time and will definitely come back."
         },
         {
-            "id": 3,
+            "id": "3",
             "name": "Amina Yusuf",
             "title": "Family Vacation",
             "rating": 5,
             "comment": "The kids loved the pool and we loved the breakfast spread. One of the best family trips ever."
         },
         {
-            "id": 4,
+            "id": "4",
             "name": "Luca Moretti",
             "title": "Solo Traveler",
             "rating": 4,
             "comment": "Great value for money. Clean, comfortable, and the location was perfect for exploring the city."
         }
     ],
-    "bookings": []
+    "bookings": [
+        {
+            "roomId": "6",
+            "hotelName": "Azure Beach Resort",
+            "roomType": "Double Bed",
+            "image": "/roomImg3.jpg",
+            "city": "Lagos",
+            "pricePerNight": 249,
+            "checkIn": "0003-05-31",
+            "checkOut": "0025-02-02",
+            "guests": 1,
+            "isPaid": false,
+            "userId": "user1",
+            "id": "xgtOzGdFaIo"
+        }
+    ],
+    "$schema": "./node_modules/json-server/schema.json"
 }

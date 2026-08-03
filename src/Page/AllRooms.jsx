@@ -43,7 +43,7 @@ const AllRooms = () => {
         setSelectedSort("")
     }
 
-    // filter + sort
+
     const filteredRooms = rooms
         .filter((room) => hotelName ? room.hotelName === hotelName : true)
         .filter((room) => selectedRoomTypes.length > 0 ? selectedRoomTypes.includes(room.roomType) : true)
@@ -78,7 +78,7 @@ const AllRooms = () => {
                     {filteredRooms.map((room, index) => (
                         <Link
                             key={index}
-                            to={`/room-details/${room.id}checkIn=${checkIn}&checkOut=${checkOut}&guests=${guests}`}
+                            to={`/room-details/${room.id}`}
                             className='flex text-[12px] flex-col md:flex-row gap-5 border-b border-gray-300 py-5'
                         >
                             <img src={room.images[0]} alt="img" className='w-60 h-40 rounded-md object-cover' />
