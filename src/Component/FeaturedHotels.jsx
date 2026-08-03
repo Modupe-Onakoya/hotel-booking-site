@@ -19,7 +19,6 @@ export const FeaturedHotels = () => {
 
             </div>
 
-            <p className='text-center border p-2 shadow-md border-gray-300 text-sm rounded-lg mt-5 cursor-pointer hover:-translate-y-2 ' onClick={() => navigate('/rooms')}> View  all searches</p>
         </div>
     )
 }

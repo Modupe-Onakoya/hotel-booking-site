@@ -8,7 +8,7 @@ import AppContext from './Component/AppContext.jsx'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
-    <ClerkProvider>
+    <ClerkProvider afterSignOutUrl={"/"}>
       <AppContext>
         <App />
       </AppContext>

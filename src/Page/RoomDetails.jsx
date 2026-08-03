@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { assets, facilityIcons, roomCommonData } from '../assets/assets'
 import Star from '../Component/Star'
+import { useUser } from '@clerk/react'
 import { context } from '../Component/AppContext'
 
 const RoomDetails = () => {
@@ -15,6 +16,7 @@ const RoomDetails = () => {
     const { id } = useParams()
     const { rooms } = useContext(context)
 
+    const { user } = useUser()
     useEffect(() => {
         const found = rooms.find((room) => String(room.id) === String(id))
         if (found) {
@@ -128,7 +130,7 @@ const RoomDetails = () => {
             )}
 
             {/* booking form */}
-            <form onSubmit={handleBooking} className='flex border border-gray-200 rounded-lg mb-10 p-4 justify-between mt-4 shadow-lg flex-col space-y-5 md:flex-row'>
+            <form onSubmit={user ? handleBooking : () => { alert("Kindly Login") }} className='flex border border-gray-200 rounded-lg mb-10 p-4 justify-between mt-4 shadow-lg flex-col space-y-5 md:flex-row'>
                 <div className='flex gap-5 flex-col md:flex-row'>
                     <div className='flex flex-col border-r px-2 border-gray-300'>
                         <label htmlFor="checkin" className='text-sm'>Check In</label>

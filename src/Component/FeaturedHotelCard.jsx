@@ -1,10 +1,16 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { assets } from '../assets/assets'
+import { useUser } from '@clerk/react'
 
 const FeaturedHotelCard = ({ room, index }) => {
+    const { user } = useUser()
+    const navigate = useNavigate()
+    const submit = () => {
+        !user && alert("akindly login")
+    }
     return (
-        <Link to={`/rooms?hotelName=${room.name}`} className='rounded-sm border-gray-300 border relative text-[13px]' >
+        <Link to={user ? `/rooms?hotelName=${room.name}` : null} onClick={submit} className='rounded-sm border-gray-300 border relative text-[13px]' >
 
             {index % 2 === 0 && <p className='absolute text-[13px] top-2 left-2 px-3 py-1 rounded-lg bg-white'>Best Seller</p>}
             <img className="w-50 h-30 rounded-sm" src={room.image} alt="" />

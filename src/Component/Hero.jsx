@@ -4,6 +4,7 @@ import Navbar from './Navbar'
 import { cities } from '../assets/assets'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { context } from './AppContext'
+import { useUser } from '@clerk/react'
 
 const Hero = () => {
     const [pickedDestination, setPickedDestinations] = useState("")
@@ -11,6 +12,7 @@ const Hero = () => {
     const [checkOut, setCheckOut] = useState("")
     const [guests, setGuests] = useState(1)
     const { hotel } = useContext(context)
+    const { user } = useUser()
 
     const location = useLocation().pathname
     const navigate = useNavigate()
@@ -28,7 +30,7 @@ const Hero = () => {
                 <p className='text-xl max-w-[280px] text-white font-bold md:text-5xl md:max-w-lg'>Discover Your Perfect Gateway Destination</p>
                 <p className='text-[10px] max-w-[250px] text-white md:text-[14px] md:max-w-lg'>Unparallel luxry and comfort await at the world most exclusive hotel and resort. Start your journey today. </p>
             </div>
-            <form onSubmit={submit} className='bg-white text-gray-500 rounded-lg px-6 py-4  flex flex-col md:flex-row w-fit max-md:items-start gap-4 max-md:mx-auto'>
+            <form onSubmit={user ? submit : () => alert("Kinldy login to acess hotels")} className='bg-white text-gray-500 rounded-lg px-6 py-4  flex flex-col md:flex-row w-fit max-md:items-start gap-4 max-md:mx-auto'>
 
                 <div>
                     <div className='flex items-center gap-2'>
