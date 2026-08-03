@@ -1,0 +1,384 @@
+{
+  "hotels": [
+    {
+      "id": "1",
+      "name": "Urbanza Suites",
+      "address": "123 Main Road, 23 Colony",
+      "city": "New York",
+      "contact": "+1234567890",
+      "rating": 4.8,
+      "isFeatured": true,
+      "image": "/roomImg1.jpg",
+      "description": "A luxury urban retreat in the heart of New York, offering world-class amenities and stunning city views."
+    },
+    {
+      "id": "2",
+      "name": "Azure Beach Resort",
+      "address": "45 Ocean Drive, Victoria Island",
+      "city": "Lagos",
+      "contact": "+2348012345678",
+      "rating": 4.5,
+      "isFeatured": true,
+      "image": "/roomImg2.jpg",
+      "description": "A stunning beachfront resort with breathtaking ocean views and premium hospitality."
+    },
+    {
+      "id": "3",
+      "name": "The Grand Palace",
+      "address": "78 Kings Avenue, Central District",
+      "city": "London",
+      "contact": "+447911123456",
+      "rating": 4.9,
+      "isFeatured": true,
+      "image": "/roomImg3.jpg",
+      "description": "An iconic luxury hotel in central London combining classic elegance with modern comfort."
+    }
+  ],
+  "rooms": [
+    {
+      "id": "1",
+      "hotelId": 1,
+      "hotelName": "Urbanza Suites",
+      "city": "New York",
+      "roomType": "Single Bed",
+      "pricePerNight": 199,
+      "amenities": [
+        "Free WiFi",
+        "Room Service",
+        "Pool Access"
+      ],
+      "images": [
+        "/roomImg1.jpg",
+        "/roomImg2.jpg",
+        "/roomImg3.jpg",
+        "/roomImg4.jpg"
+      ],
+      "isAvailable": true,
+      "rating": 4.5,
+      "description": "A cozy single room with modern furnishings and city views."
+    },
+    {
+      "id": "2",
+      "hotelId": 1,
+      "hotelName": "Urbanza Suites",
+      "city": "New York",
+      "roomType": "Double Bed",
+      "pricePerNight": 299,
+      "amenities": [
+        "Free WiFi",
+        "Free Breakfast",
+        "Room Service",
+        "Pool Access"
+      ],
+      "images": [
+        "/roomImg2.jpg",
+        "/roomImg3.jpg",
+        "/roomImg4.jpg",
+        "/roomImg1.jpg"
+      ],
+      "isAvailable": true,
+      "rating": 4.7,
+      "description": "Spacious double room perfect for couples with premium city views."
+    },
+    {
+      "id": "3",
+      "hotelId": 1,
+      "hotelName": "Urbanza Suites",
+      "city": "New York",
+      "roomType": "Suite",
+      "pricePerNight": 499,
+      "amenities": [
+        "Free WiFi",
+        "Free Breakfast",
+        "Pool Access",
+        "Mountain View",
+        "Room Service"
+      ],
+      "images": [
+        "/roomImg3.jpg",
+        "/roomImg4.jpg",
+        "/roomImg1.jpg",
+        "/roomImg2.jpg"
+      ],
+      "isAvailable": true,
+      "rating": 4.9,
+      "description": "Luxurious suite with panoramic city views and a private lounge area."
+    },
+    {
+      "id": "4",
+      "hotelId": 1,
+      "hotelName": "Urbanza Suites",
+      "city": "New York",
+      "roomType": "Double Bed",
+      "pricePerNight": 399,
+      "amenities": [
+        "Free WiFi",
+        "Mountain View",
+        "Pool Access"
+      ],
+      "images": [
+        "/roomImg4.jpg",
+        "/roomImg1.jpg",
+        "/roomImg2.jpg",
+        "/roomImg3.jpg"
+      ],
+      "isAvailable": false,
+      "rating": 4.6,
+      "description": "Premium double room with mountain views and exclusive pool access."
+    },
+    {
+      "id": "5",
+      "hotelId": 2,
+      "hotelName": "Azure Beach Resort",
+      "city": "Lagos",
+      "roomType": "Single Bed",
+      "pricePerNight": 149,
+      "amenities": [
+        "Free WiFi",
+        "Pool Access",
+        "Room Service"
+      ],
+      "images": [
+        "/roomImg2.jpg",
+        "/roomImg1.jpg",
+        "/roomImg4.jpg",
+        "/roomImg3.jpg"
+      ],
+      "isAvailable": true,
+      "rating": 4.3,
+      "description": "Comfortable single room steps away from the beach."
+    },
+    {
+      "id": "6",
+      "hotelId": 2,
+      "hotelName": "Azure Beach Resort",
+      "city": "Lagos",
+      "roomType": "Double Bed",
+      "pricePerNight": 249,
+      "amenities": [
+        "Free WiFi",
+        "Free Breakfast",
+        "Pool Access"
+      ],
+      "images": [
+        "/roomImg3.jpg",
+        "/roomImg2.jpg",
+        "/roomImg1.jpg",
+        "/roomImg4.jpg"
+      ],
+      "isAvailable": true,
+      "rating": 4.5,
+      "description": "Beachfront double room with stunning ocean views."
+    },
+    {
+      "id": "7",
+      "hotelId": 2,
+      "hotelName": "Azure Beach Resort",
+      "city": "Lagos",
+      "roomType": "Suite",
+      "pricePerNight": 449,
+      "amenities": [
+        "Free WiFi",
+        "Free Breakfast",
+        "Pool Access",
+        "Room Service"
+      ],
+      "images": [
+        "/roomImg4.jpg",
+        "/roomImg3.jpg",
+        "/roomImg2.jpg",
+        "/roomImg1.jpg"
+      ],
+      "isAvailable": true,
+      "rating": 4.8,
+      "description": "Luxury beach suite with private terrace and ocean panorama."
+    },
+    {
+      "id": "8",
+      "hotelId": 2,
+      "hotelName": "Azure Beach Resort",
+      "city": "Lagos",
+      "roomType": "Single Bed",
+      "pricePerNight": 179,
+      "amenities": [
+        "Free WiFi",
+        "Room Service"
+      ],
+      "images": [
+        "/roomImg1.jpg",
+        "/roomImg4.jpg",
+        "/roomImg3.jpg",
+        "/roomImg2.jpg"
+      ],
+      "isAvailable": false,
+      "rating": 4.2,
+      "description": "Cozy single room with garden views and complimentary WiFi."
+    },
+    {
+      "id": "9",
+      "hotelId": 3,
+      "hotelName": "The Grand Palace",
+      "city": "London",
+      "roomType": "Single Bed",
+      "pricePerNight": 299,
+      "amenities": [
+        "Free WiFi",
+        "Free Breakfast",
+        "Room Service"
+      ],
+      "images": [
+        "/roomImg3.jpg",
+        "/roomImg1.jpg",
+        "/roomImg2.jpg",
+        "/roomImg4.jpg"
+      ],
+      "isAvailable": true,
+      "rating": 4.7,
+      "description": "Elegant single room with classic London architecture and modern comforts."
+    },
+    {
+      "id": "10",
+      "hotelId": 3,
+      "hotelName": "The Grand Palace",
+      "city": "London",
+      "roomType": "Double Bed",
+      "pricePerNight": 499,
+      "amenities": [
+        "Free WiFi",
+        "Free Breakfast",
+        "Pool Access",
+        "Mountain View"
+      ],
+      "images": [
+        "/roomImg4.jpg",
+        "/roomImg2.jpg",
+        "/roomImg1.jpg",
+        "/roomImg3.jpg"
+      ],
+      "isAvailable": true,
+      "rating": 4.9,
+      "description": "Grand double room with park views and premium furnishings."
+    },
+    {
+      "id": "11",
+      "hotelId": 3,
+      "hotelName": "The Grand Palace",
+      "city": "London",
+      "roomType": "Suite",
+      "pricePerNight": 899,
+      "amenities": [
+        "Free WiFi",
+        "Free Breakfast",
+        "Pool Access",
+        "Room Service",
+        "Mountain View"
+      ],
+      "images": [
+        "/roomImg1.jpg",
+        "/roomImg3.jpg",
+        "/roomImg4.jpg",
+        "/roomImg2.jpg"
+      ],
+      "isAvailable": true,
+      "rating": 5,
+      "description": "The pinnacle of luxury — a full suite with butler service and panoramic London views."
+    },
+    {
+      "id": "12",
+      "hotelId": 3,
+      "hotelName": "The Grand Palace",
+      "city": "London",
+      "roomType": "Double Bed",
+      "pricePerNight": 599,
+      "amenities": [
+        "Free WiFi",
+        "Pool Access",
+        "Room Service"
+      ],
+      "images": [
+        "/roomImg2.jpg",
+        "/roomImg4.jpg",
+        "/roomImg3.jpg",
+        "/roomImg1.jpg"
+      ],
+      "isAvailable": false,
+      "rating": 4.8,
+      "description": "Sophisticated double room with access to the palace spa and pool."
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "1",
+      "name": "Sarah Johnson",
+      "title": "Business Traveler",
+      "rating": 5,
+      "comment": "Absolutely stunning experience. The rooms were immaculate and the staff went above and beyond."
+    },
+    {
+      "id": "2",
+      "name": "James Carter",
+      "title": "Honeymoon Guest",
+      "rating": 4,
+      "comment": "Perfect location and beautiful interiors. We had an amazing time and will definitely come back."
+    },
+    {
+      "id": "3",
+      "name": "Amina Yusuf",
+      "title": "Family Vacation",
+      "rating": 5,
+      "comment": "The kids loved the pool and we loved the breakfast spread. One of the best family trips ever."
+    },
+    {
+      "id": "4",
+      "name": "Luca Moretti",
+      "title": "Solo Traveler",
+      "rating": 4,
+      "comment": "Great value for money. Clean, comfortable, and the location was perfect for exploring the city."
+    }
+  ],
+  "bookings": [
+    {
+      "roomId": "9",
+      "hotelName": "The Grand Palace",
+      "roomType": "Single Bed",
+      "image": "/assets/roomImg1-DYXdOBdo.png",
+      "city": "London",
+      "pricePerNight": 299,
+      "checkIn": "0002-02-12",
+      "checkOut": "0002-02-12",
+      "guests": 1,
+      "isPaid": false,
+      "userId": "user1",
+      "id": "FbSg62UErlE"
+    },
+    {
+      "roomId": "1",
+      "hotelName": "Urbanza Suites",
+      "roomType": "Single Bed",
+      "image": "/src/assets/roomImg1.png",
+      "city": "New York",
+      "pricePerNight": 199,
+      "checkIn": "0003-03-03",
+      "checkOut": "0003-03-03",
+      "guests": 1,
+      "isPaid": false,
+      "userId": "user1",
+      "id": "EGBGiJe7UyY"
+    },
+    {
+      "roomId": "1",
+      "hotelName": "Urbanza Suites",
+      "roomType": "Single Bed",
+      "image": "/src/assets/roomImg1.png",
+      "city": "New York",
+      "pricePerNight": 199,
+      "checkIn": "0068-06-06",
+      "checkOut": "0007-07-07",
+      "guests": 1,
+      "isPaid": false,
+      "userId": "user1",
+      "id": "Bs1OuIHMkr4"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

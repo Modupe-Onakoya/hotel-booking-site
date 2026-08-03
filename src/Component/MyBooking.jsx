@@ -1,25 +1,31 @@
 import React, { useEffect, useState } from "react";
 import { useUser } from "@clerk/react";
+import { hotelData } from "../assets/assets";
 
 const MyBooking = () => {
     const [bookings, setBookings] = useState([])
     const [loading, setLoading] = useState(true)
 
+
+    // const fetchBookings = async () => {
+    //     try {
+    //         // filter by userId — replace "user1" with clerk user id later
+    //         const res = await fetch("http://localhost:5000/bookings?userId=user1")
+    //         const data = await res.json()
+    //         setBookings(data)
+    //     } catch (err) {
+    //         console.error("Failed to fetch bookings:", err)
+    //     } finally {
+    //         setLoading(false)
+    //     }
+    // }
+    // fetchBookings()
     useEffect(() => {
-        const fetchBookings = async () => {
-            try {
-                // filter by userId — replace "user1" with clerk user id later
-                const res = await fetch("http://localhost:5000/bookings?userId=user1")
-                const data = await res.json()
-                setBookings(data)
-            } catch (err) {
-                console.error("Failed to fetch bookings:", err)
-            } finally {
-                setLoading(false)
-            }
-        }
-        fetchBookings()
+        const booking = hotelData.bookings
+        setBookings(bookings)
+
     }, [])
+
 
     if (loading) return <p className="pt-30 px-24 text-sm">Loading bookings...</p>
 
@@ -82,10 +88,7 @@ const MyBooking = () => {
                             {booking.isPaid ? "Paid" : "Unpaid"}
                         </span>
                         <button
-                            onClick={async () => {
-                                await fetch(`http://localhost:5000/bookings/${booking.id}`, {
-                                    method: "DELETE"
-                                })
+                            onClick={() => {
                                 setBookings((prev) => prev.filter((b) => b.id !== booking.id))
                             }}
                             className="text-red-500 text-xs cursor-pointer hover:underline"
