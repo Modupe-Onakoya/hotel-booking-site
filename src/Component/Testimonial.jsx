@@ -3,7 +3,7 @@ import { assets } from '../assets/assets'
 
 const Testimonial = () => {
     return (
-        <div className='px-4 md:px-10 mt-20 md:mt-30 lg:px-24 bg-blue-50 py-4  '>
+        <div className='px-4 md:px-10 mt-20 md:mt-30 lg:px-24 bg-blue-50 py-4  ' id="testimonial">
             <h1 className='font-bold text-2xl text-center'>
                 What our guest say
             </h1>

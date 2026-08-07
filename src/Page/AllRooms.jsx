@@ -106,7 +106,7 @@ const AllRooms = () => {
             </div>
 
             {/* Filter */}
-            <div className='h-fit w-full max-w-[250px] md:fixed md:right-30'>
+            <div className='h-fit w-full max-w-[250px] md:right-30'>
                 <div className='flex justify-between border border-gray-300 w-full p-3'>
                     <p>Filter</p>
                     <p className='md:block hidden cursor-pointer' onClick={handleClear}>Clear</p>
